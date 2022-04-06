@@ -8,7 +8,7 @@ def getPrivateSubnetId():
     subnets_info = ec2_client.describe_subnets()
 
     for subnet in subnets_info['Subnets']:
-        if subnet["tags"][0]["Value"] == "private_servers":
+        if subnet["Tags"][0]["Value"] == "talent-academy-private-a":
             private_subnet = subnet["SubnetId"]
             return private_subnet
 
